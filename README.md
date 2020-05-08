@@ -6,10 +6,11 @@ Just put your Audio (MP3,WAV,etc) file in the **Data**, along with that provide 
 
 Metadata File format `startTime,EndTime,SongName,ArtistName`
 
-A sample .csv is present in the **Data** folder for reference. Simply enter the metadata accordingly (Order defines the track# of the album) and run the code. All the output track files would be present in the **Album** folder inside the **Data**.
+A sample .csv is present in the **Data** folder for reference, enter the metadata accordingly (Order defines the track# of the album).
 
 When the required libraries are installed and the required files are set; simply run `$python3 code.py`, enter the prefered album name as input, and BadaBing BadaBoom your precious album goes ZOOM.
 
+All the output track files would be present in the **Album** folder inside the **Data**.
 
 ## Dependencies
 The tool runs on Python3 and required **eye3D** and **pyDub** libraries to be installed. Moreover, FFmpeg library should also be installed to successfully run pyDub on MP3 Files.
