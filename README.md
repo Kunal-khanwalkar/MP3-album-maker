@@ -2,7 +2,7 @@
 
 Don't you just hate it when you wanted an album with separate track files but you somehow received a single 45min Audio file? Fret not, your first world issue are gone thanks to this handy tool.
 
-Just put your Audio (MP3,WAV,etc) file in the **Data**, along with that provide a timestamps .csv file containing the metadata for every track in the album.
+Just put your Audio (MP3,WAV,etc) file and album art (JPG,PNG) in the **Data**, along with that provide a timestamps .csv file containing the metadata for every track in the album.
 
 Metadata File format `startTime,EndTime,SongName,ArtistName`
 
