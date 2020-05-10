@@ -6,13 +6,15 @@ import csv
 class Audio:	
 
 	mp3file = None
-	datafile = None
+	datafile = None	
 	albumName = None
+	coverartFile = None
 
-	def __init__(self,inputmp3,datafile,albumName):
+	def __init__(self,inputmp3,datafile,albumName,coverartFile):
 		self.mp3file = AudioSegment.from_mp3(inputmp3)		
 		self.datafile = datafile
 		self.albumName = albumName
+		self.coverartFile = coverartFile
 
 	def Make_album(self):
 		fileInputStream = open(self.datafile,'r')
@@ -43,7 +45,8 @@ class Audio:
 			songFile.tag.album = self.albumName			
 			songFile.tag.title = songName
 			songFile.tag.track_num = i
-			songFile.tag.save()
+			songFile.tag.images.set(3,open(self.coverartFile,'rb').read(),'image/png')
+			songFile.tag.save(version=eyed3.id3.ID3_V2_3)
 
 			print('Song: "' + songName + '" done')
 
@@ -51,9 +54,13 @@ class Audio:
 if __name__=='__main__':
 
 	inputmp3 = glob.glob('.\\data\\*.mp3')[0]	
-	datafile = glob.glob('.\\data\\*.txt')[0]	
+	datafile = glob.glob('.\\data\\*.csv')[0]	
+	try:
+		albumArt = glob.glob('.\\data\\*.jpg')[0]
+	except:
+		albumArt = glob.glob('.\\data\\*.png')[0]	
 
 	albumName = str(input('Enter album name: '))
-	
-	audiotime = Audio(inputmp3,datafile,albumName)
+
+	audiotime = Audio(inputmp3,datafile,albumName,albumArt)
 	audiotime.Make_album()
