@@ -3,18 +3,23 @@ import eyed3
 from pydub import AudioSegment
 import csv
 
+
 class Audio:	
 
 	mp3file = None
 	datafile = None	
 	albumName = None
 	coverartFile = None
+	imageType = None
 
 	def __init__(self,inputmp3,datafile,albumName,coverartFile):
 		self.mp3file = AudioSegment.from_mp3(inputmp3)		
 		self.datafile = datafile
 		self.albumName = albumName
 		self.coverartFile = coverartFile
+		tokens = coverartFile.split('/')
+		imageName = tokens[-1]
+		self.imageType = imageName.split('.')[1]
 
 	def Make_album(self):
 		fileInputStream = open(self.datafile,'r')
@@ -45,10 +50,28 @@ class Audio:
 			songFile.tag.album = self.albumName			
 			songFile.tag.title = songName
 			songFile.tag.track_num = i
-			songFile.tag.images.set(3,open(self.coverartFile,'rb').read(),'image/png')
+			songFile.tag.images.set(3,open(self.coverartFile,'rb').read(),'image/' + self.imageType)
 			songFile.tag.save(version=eyed3.id3.ID3_V2_3)
 
 			print('Song: "' + songName + '" done')
+
+
+
+	def splice_song(self, songName, startTime, endTime):
+		st = ( int(startTime.split(':')[0])*60 + int(startTime.split(':')[1]) ) * 1000
+		et = ( int(endTime.split(':')[0])*60 + int(endTime.split(':')[1]) ) * 1000		
+		extract = self.mp3file[st:et]
+		songFileString = '.\\data\\' + songName + '.mp3'
+		extract.export(songFileString, format='mp3')
+
+	def write_metadata(self, mp3fileString, songTitle, artistName):		
+		songFile = eyed3.load(mp3fileString)			
+		songFile.tag.artist = artistName
+		songFile.tag.album = self.albumName			
+		songFile.tag.title = songTitle		
+		songFile.tag.images.set(3,open(self.coverartFile,'rb').read(),'image/' + self.imageType)
+		songFile.tag.save(version=eyed3.id3.ID3_V2_3)		
+
 
 
 if __name__=='__main__':
