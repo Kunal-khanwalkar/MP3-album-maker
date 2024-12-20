@@ -86,4 +86,4 @@ if __name__=='__main__':
 	albumName = str(input('Enter album name: '))
 
 	audiotime = Audio(inputmp3,datafile,albumName,albumArt)
-	audiotime.Make_album()
+	audiotime.Make_album() # type: ignore

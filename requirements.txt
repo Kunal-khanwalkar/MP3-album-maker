@@ -1,2 +1,11 @@
+certifi==2024.12.14
+charset-normalizer==3.4.0
+deprecation==2.1.0
 eyeD3==0.9.5
-pyDub==0.23.1
+filetype==1.2.0
+idna==3.10
+packaging==24.2
+pydub==0.23.1
+requests==2.32.3
+urllib3==2.2.3
+yt-dlp==2024.12.13
