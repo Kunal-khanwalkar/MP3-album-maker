@@ -1,12 +1,14 @@
 # Design / API Documentation / Whatever
 
 ## Entry Point
-album_maker.py
+main.py
 
 [TODO] default opens as a GUI tool.
-With cmd line args, can be used as a CLI tool
+With cmd line args, can be used as a CLI tool-  
+`main.py <URL> <timestamps.csv>`
 
-AlbumMaker.py --URL \<url\> --data "./data/<timestamps.csv>"
+where URL and timestampts.csv are positional arguments.  
+Example: `py main.py "https://youtu.be/restofurl" "./data/Sample_CSV.csv"`
 
 
 ## Core components
@@ -75,7 +77,8 @@ Dependencies
 
 Responsibilities:
 - Enables Command Line Arguments for Album Maker.
-- Takes in mandatory \<URL\> argument which is the input album youtube url.
+- Takes in mandatory `URL` argument which is the input album youtube url as the first positional argument.
+- Takes in mandatory `CSV` argument which is the path to the timestamps.csv file as the second positional argument.
 - Takes in optional `--verbose` argument for providing verbose debug output in CLI.
 
 ## [TODO] GUI

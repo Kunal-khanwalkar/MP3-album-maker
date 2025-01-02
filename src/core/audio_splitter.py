@@ -1,7 +1,10 @@
 from pydub import AudioSegment
 
 class AudioSplitter:
-    def __init__(self, audio_file):
+    def __init__(self):
+        pass
+
+    def read(self, audio_file):
         self.audio_file = AudioSegment.from_file(audio_file)
 
     def export(self, start, end, output_file):

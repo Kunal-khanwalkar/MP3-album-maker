@@ -3,7 +3,10 @@ import csv
 from .song import Song
 
 class CSVReader:
-    def __init__(self, timestamps_csv):
+    def __init__(self):
+        pass 
+
+    def read(self, timestamps_csv):
         timestamps_glob = glob.glob(timestamps_csv)[0]
         fileInputStream = open(timestamps_glob,'r')
         self.reader = csv.reader(fileInputStream, delimiter=',')
