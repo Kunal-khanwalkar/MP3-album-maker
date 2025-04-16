@@ -1,13 +1,17 @@
 import yt_dlp as ydl
 
 class YTDLPFactory:
-    def __init__(self, opts):
-        self.ydl = ydl.YoutubeDL(self.ydl_opts(opts))
+    def __init__(self, logger, is_verbose):
+        self.logger = logger
+        self.ydl = ydl.YoutubeDL(self.ydl_opts(is_verbose))
 
     def download(self, URL) :
-        self.ydl.download([URL])
+        retcode = self.ydl.download([URL])
+        if retcode != 0:
+            self.logger.error("Failed to download the album")
+            exit(1)
 
-    def ydl_opts(self, opts):
+    def ydl_opts(self, is_verbose):
         return {
             'format': 'bestaudio/best',
             'writethumbnail': True,
@@ -21,5 +25,5 @@ class YTDLPFactory:
                 'preferredquality': '256',
             }],
             'outtmpl': '.\\temp_album',
-            'verbose': opts
+            'is_verbose': is_verbose
         }

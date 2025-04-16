@@ -14,7 +14,7 @@ class ArgumentParser:
     def get_url(self):
         return self.parser.parse_args().URL
 
-    def get_opts(self):
+    def is_verbose(self):
         return self.parser.parse_args().verbose
 
     def get_csv(self):

@@ -36,6 +36,7 @@ Responsibilities:
 - Converts the album to mp3 codec with 256 kbps quality.
 - Downloads the thumbnail from the given youtube URL.
 - Converts the thumbnail to jpg for the album.
+- [TODO]: Set output destination
 
 ### CSV Reader
 
@@ -66,9 +67,13 @@ Responsibilties:
 
 ## I/O
 
-### [TODO] Logger
+### Logger
 
-Custom logger
+Responsibilities:
+- Provides logging functionality for all sub-components
+- DEBUG statements are flagged behind `--verbose` argument
+- [TODO]: Make logger variadic
+- [TODO]: Color code the log statement based on levels
 
 ### Arguments handler
 
@@ -92,3 +97,7 @@ GUI functionalities:
 2. Tag a song
     - Enter details of a song (no CSV build)
     - Only updates metadata
+
+[TODO] Batteries included
+
+[TODO] 3.0 Wireframing driven development (Signature overrides maxxing) (WDD)

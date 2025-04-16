@@ -1,9 +1,13 @@
 class Logger(object):
-    def debug(self, msg):
-        pass
+    def __init__(self, is_verbose):
+        self.is_verbose = is_verbose
 
-    def warning(self, msg):
-        pass
+    def debug(self, msg):
+        if self.is_verbose:
+            print(f"[DEBUG]: {msg}")
+
+    def warn(self, msg):
+        print(f"[WARN]: {msg}")
 
     def error(self, msg):
-        pass
+        print(f"[ERROR]: {msg}")
