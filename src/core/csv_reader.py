@@ -28,7 +28,7 @@ class CSVReader:
             optional_data = dict(zip_longest(['artist', 'album'], optional_fields, fillvalue=''))
 
             songs.append(Song(name=name,
-                        file_path='.\\' + str(name) + '.mp3', 
+                        file_path='.\\data\\' + str(name) + '.mp3', 
                         start_time=start_time.split(':'), 
                         end_time=end_time.split(':'), 
                         album_art_path=albumart, 

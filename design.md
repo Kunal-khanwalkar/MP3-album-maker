@@ -36,7 +36,6 @@ Responsibilities:
 - Converts the album to mp3 codec with 256 kbps quality.
 - Downloads the thumbnail from the given youtube URL.
 - Converts the thumbnail to jpg for the album.
-- [TODO]: Set output destination
 
 ### CSV Reader
 
@@ -56,6 +55,7 @@ Dependencies
 Responsibilities:
 - Reads the mp3 file using pydub's AudioSegment.
 - Splits the audio from the respective file by the given start and end time
+- Outputs the audio files under `.\data\`
 
 ### Song Tagger
 
@@ -72,8 +72,8 @@ Responsibilties:
 Responsibilities:
 - Provides logging functionality for all sub-components
 - DEBUG statements are flagged behind `--verbose` argument
-- [TODO]: Make logger variadic
-- [TODO]: Color code the log statement based on levels
+- Variadic log arguments
+- Colour coded logs based on log levels
 
 ### Arguments handler
 

@@ -8,8 +8,8 @@ from .core.validator import Validator
 from .core.yt_dlp_factory import YTDLPFactory
 
 class AlbumMaker:
-    mp3file: str = './temp_album.mp3'
-    albumArt: str = './temp_album.jpg'
+    mp3file: str = './data/temp_album.mp3'
+    albumArt: str = './data/temp_album.jpg'
 
     def __init__(self):
         self.args = ArgumentParser()
