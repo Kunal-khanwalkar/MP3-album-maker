@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Canvas name="my_canvas" width="800" height="600">
+    <Frame name="main_frame" bg="#80c1ff" bd="5" place='{"relx": "0.5", "rely": "0.1", "relwidth": "0.75", "relheight": "0.1", "anchor": "n"}' />
+    <Button name="make_album_button" text="Make Album" font="40" place='{"relx": "0.5", "relwidth": "0.3", "relheight": "0.1"}' />
+</Canvas>

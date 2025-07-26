@@ -88,6 +88,12 @@ Responsibilities:
 
 ## [TODO] GUI
 
+WireFrame pattern
+- Reads in wireframe.xml and programatically generates widgets for the GUI.  
+
+GUI Controller
+- Binds album_maker functionalities to separate UI components
+
 GUI functionalities:
 1. Split the album completely, or just split one song
     - Enter Youtube URL

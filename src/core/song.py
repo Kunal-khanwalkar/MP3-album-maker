@@ -8,3 +8,7 @@ class Song:
         self.album = album
         self.album_art_path = album_art_path
         self.track_number = track_number
+
+    # Future plans for re-wiring the imports with custom validator, see visitor.py
+    # def validate(self):
+    #     pass
