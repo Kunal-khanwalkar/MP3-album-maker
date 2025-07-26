@@ -101,3 +101,9 @@ GUI functionalities:
 [TODO] Batteries included
 
 [TODO] 3.0 Wireframing driven development (Signature overrides maxxing) (WDD)
+
+[TODO] CLI and GUI are two different ingresses
+- [ ] For CLI, you can directly call each separate component or directly call the AlbumMaker
+- [x] For GUI, same thing but on GUI (inherent in GUI)
+- [x] Logger is global, used for both.
+- [x] Argument Parser is only on the CLI ingress 

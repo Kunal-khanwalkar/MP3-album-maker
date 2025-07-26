@@ -1,9 +1,14 @@
+from src.io.argument_parser import ArgumentParser
+from src.io.logger import Logger
+
 from src.album_maker import AlbumMaker
 
-class GUI:
-    def __init__(self):
-        self.album_maker = AlbumMaker()
+args = ArgumentParser()
+logger = Logger(is_verbose=args.is_verbose())
 
-
-gui = GUI()
-gui.album_maker.make_album()
+if args.get_url() and args.get_csv():
+    logger.warn("CLI Ingress")
+    album_maker = AlbumMaker(logger, args)
+    album_maker.make_album()
+else:
+    logger.warn("GUI Ingress")
