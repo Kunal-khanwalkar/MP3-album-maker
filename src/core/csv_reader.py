@@ -7,6 +7,7 @@ class CSVReader:
     def __init__(self, logger, validator):
         self.logger = logger
         self.validator = validator
+        # CSVReader.prepare_song.validate = CSVReader.validate_row
 
     def read(self, timestamps_csv):
         try:
@@ -35,3 +36,7 @@ class CSVReader:
                         track_number=i,
                         **optional_data))
         return songs
+        
+    # Future plans for re-wiring the imports with custom validator, see visitor.py
+    # def validate_row():
+    #     pass
