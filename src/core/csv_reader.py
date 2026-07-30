@@ -28,10 +28,23 @@ class CSVReader:
             optional_data = dict(zip_longest(['artist', 'album'], optional_fields, fillvalue=''))
 
             songs.append(Song(name=name,
-                        file_path='.\\data\\' + str(name) + '.mp3', 
-                        start_time=start_time.split(':'), 
-                        end_time=end_time.split(':'), 
+                        file_path='./data/' + str(name) + '.mp3',
+                        start_time=self._parse_timestamp(start_time), 
+                        end_time=self._parse_timestamp(end_time), 
                         album_art_path=albumart, 
                         track_number=i,
                         **optional_data))
         return songs
+    
+    def _parse_timestamp(self, timestamp: str) -> int:
+        parts = timestamp.split(':')
+
+        if len(parts) == 2:
+            minutes, seconds = map(int, parts)
+            return minutes * 60 + seconds
+
+        if len(parts) == 3:
+            hours, minutes, seconds = map(int, parts)
+            return hours * 3600 + minutes * 60 + seconds
+
+        raise ValueError(f"Invalid timestamp: {timestamp}")

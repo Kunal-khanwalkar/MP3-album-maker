@@ -8,4 +8,4 @@ packaging==24.2
 pydub==0.23.1
 requests==2.32.3
 urllib3==2.2.3
-yt-dlp==2024.12.13
+yt-dlp==2026.3.17

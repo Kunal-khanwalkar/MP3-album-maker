@@ -19,7 +19,7 @@ class Validator:
             self.logger.error(f"Insufficient details for Song in row: {row}")
             return False
 
-        timestamp_pattern = r"^\d{1,2}:\d{1,2}$"
+        timestamp_pattern = r"^(\d{1,2}:)?\d{1,2}:\d{2}$"
         if not re.match(timestamp_pattern, row[0]) or not re.match(timestamp_pattern, row[1]):
             self.logger.error(f"Invalid timestamps in row: {row}")
             return False

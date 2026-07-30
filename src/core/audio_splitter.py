@@ -18,5 +18,5 @@ class AudioSplitter:
     def _split(self, start, end):
         return self.audio_file[self._convert_to_ms(start):self._convert_to_ms(end)]
 
-    def _convert_to_ms(self, time_array):
-        return (int(time_array[0]) * 60 + int(time_array[1])) * 1000
+    def _convert_to_ms(self, seconds):
+        return seconds * 1000

@@ -15,6 +15,10 @@ All the output track files will be present in the **Album** folder inside the **
 
 For ease of use, a tkinter based version is also provided for the normies. You can either trim an audiofile or change it's metadata through the intuitive GUI. Simply run `$python3 gui.py`, and fill the form accordingly. I have no plans to improve this tool because tkinter is not my favourite thing to work on.
 
+## Usage
+
+`python main.py -URL <url> -CSV <path-to-csv>`
+
 
 ## Dependencies
 The tool runs on Python3 and requires **eye3D** and **pyDub** libraries to be installed on your system. Moreover, FFmpeg library should also be installed to successfully run pyDub on MP3 Files.

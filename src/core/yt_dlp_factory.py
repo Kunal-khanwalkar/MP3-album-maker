@@ -24,6 +24,6 @@ class YTDLPFactory:
                 'preferredcodec': 'mp3',
                 'preferredquality': '256',
             }],
-            'outtmpl': '.\\data\\temp_album',
+            'outtmpl': './data/temp_album.%(ext)s',
             'is_verbose': is_verbose
         }
